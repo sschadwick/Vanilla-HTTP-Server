@@ -53,8 +53,8 @@ describe('greet POST', function() {
         expect(err).to.eql(null);
         expect(res).to.have.status(200);
         expect(res.msg).to.equal(expected);
-        done();
       })
     })
+    done();
   })
 })
