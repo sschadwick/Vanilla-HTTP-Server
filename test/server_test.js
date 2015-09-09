@@ -40,13 +40,21 @@ describe('greet POST', function() {
 
   var server = 'localhost:3000';
   it('should respond to a greet POST request', function(done) {
-    chai.request(server)
-    .post('/greet')
-    .send({name: 'Test'})
-    .end(function(err, res) {
-      expect(err).to.eql(null);
-      expect(res).to.have.status(200);
-      done();
+    var res;
+
+    before(function() {
+      chai.request(server)
+      .post('/greet')
+      .send({name: 'Test'})
+      .end(function(err, response) {
+
+        var expected = 'hello Test';
+        res = response;
+        expect(err).to.eql(null);
+        expect(res).to.have.status(200);
+        expect(res.msg).to.equal(expected);
+        done();
+      })
     })
   })
 })
