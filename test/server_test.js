@@ -5,14 +5,12 @@ var chai = require('chai');
 var chaihttp = require('chai-http');
 var expect = chai.expect;
 
-chai.use(chaihttp)
+chai.use(chaihttp);
 
 describe('time', function() {
 
-  var server = 'localhost:3000';
-
   it('should respond to a time request', function(done) {
-    chai.request(server)
+    chai.request('localhost:3000')
     .get('/time')
     .end(function(err, res) {
       expect(err).to.eql(null);
@@ -24,9 +22,8 @@ describe('time', function() {
 
 describe('greet GET', function () {
 
-  var server = 'localhost:3000';
   it('should respond to a greet GET request', function(done) {
-    chai.request(server)
+    chai.request('localhost:3000')
     .get('/greet')
     .end(function(err, res) {
       expect(err).to.eql(null);
@@ -38,18 +35,19 @@ describe('greet GET', function () {
 
 describe('greet POST', function() {
 
-  var server = 'localhost:3000';
   it('should respond to a greet POST request', function(done) {
     var res;
+    var err;
 
     before(function() {
-      chai.request(server)
+      chai.request('localhost:3000')
       .post('/greet')
       .send({name: 'Test'})
-      .end(function(err, response) {
+      .end(function(error, response) {
 
         var expected = 'hello Test';
         res = response;
+        err = error;
         expect(err).to.eql(null);
         expect(res).to.have.status(200);
         expect(res.msg).to.equal(expected);

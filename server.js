@@ -33,14 +33,12 @@ var server = http.createServer(function(req, res) {
       return res.end();
 
     } else if (req.method === 'POST') {
-
       res.on('data', function(data) {
         var parsed = JSON.parse(data);
 
         res.writeHead(200, {
           'Content-Type': 'text/plain'
         })
-
         res.write(JSON.stringify({msg: 'hello ' + parsed.name}))
         return res.end();
       });
