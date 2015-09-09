@@ -1,0 +1,34 @@
+{
+  "name": "vanilla-http-server",
+  "version": "1.0.0",
+  "description": "a vanilla http server with get and post routes",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sschadwick/Vanilla-HTTP-Server.git"
+  },
+  "keywords": [
+    "vanilla",
+    "http",
+    "node"
+  ],
+  "author": "Steven Chadwick sschadwick@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sschadwick/Vanilla-HTTP-Server/issues"
+  },
+  "homepage": "https://github.com/sschadwick/Vanilla-HTTP-Server#readme",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "chai-http": "^1.0.0",
+    "gulp": "^3.9.0",
+    "mocha": "^2.3.2"
+  }
+}
