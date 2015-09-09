@@ -7,7 +7,7 @@ var expect = chai.expect;
 
 chai.use(chaihttp)
 
-describe('node http server', function() {
+describe('time', function() {
 
   var server = 'localhost:3000';
 
@@ -20,7 +20,11 @@ describe('node http server', function() {
       done();
     })
   })
+})
 
+describe('greet GET', function () {
+
+  var server = 'localhost:3000';
   it('should respond to a greet GET request', function(done) {
     chai.request(server)
     .get('/greet')
@@ -30,7 +34,11 @@ describe('node http server', function() {
       done();
     })
   })
+})
 
+describe('greet POST', function() {
+
+  var server = 'localhost:3000';
   it('should respond to a greet POST request', function(done) {
     chai.request(server)
     .post('/greet')

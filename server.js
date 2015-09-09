@@ -4,6 +4,7 @@ var http = require('http');
 var server = http.createServer(function(req, res) {
 
   var path = req.url.split('/');
+
   if (req.url === '/time') {
     res.writeHead(200, {
       'Content-Type': 'text/plain'
@@ -33,11 +34,13 @@ var server = http.createServer(function(req, res) {
 
     } else if (req.method === 'POST') {
 
-      req.on('data', function(data) {
+      res.on('data', function(data) {
         var parsed = JSON.parse(data);
+
         res.writeHead(200, {
-          'Content-Type': 'application/json'
+          'Content-Type': 'text/plain'
         })
+
         res.write(JSON.stringify({msg: 'hello ' + parsed.name}))
         return res.end();
       });
