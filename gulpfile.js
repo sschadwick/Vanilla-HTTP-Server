@@ -7,7 +7,7 @@ var gulpMocha = require('gulp-mocha');
 var filesToWatch = ['index.js', 'server.js', 'test/**/*.js', 'gulpfile.js'];
 
 gulp.task('jshint', function() {
-  return gulp.src(filesToWatch);
+  return gulp.src(filesToWatch)
   .pipe(jshint())
   .pipe(jshint.reporter('default'));
 });

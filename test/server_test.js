@@ -16,9 +16,9 @@ describe('time', function() {
       expect(err).to.eql(null);
       expect(res).to.have.status(200);
       done();
-    })
-  })
-})
+    });
+  });
+});
 
 describe('greet GET', function () {
 
@@ -29,9 +29,9 @@ describe('greet GET', function () {
       expect(err).to.eql(null);
       expect(res).to.have.status(200);
       done();
-    })
-  })
-})
+    });
+  });
+});
 
 describe('greet POST', function() {
 
@@ -51,8 +51,8 @@ describe('greet POST', function() {
         expect(err).to.eql(null);
         expect(res).to.have.status(200);
         expect(res.msg).to.equal(expected);
-      })
-    })
+      });
+    });
     done();
-  })
-})
+  });
+});
